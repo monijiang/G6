@@ -352,7 +352,7 @@ export default class ItemController {
       return;
     }
 
-    graph.emit('beforeremoveitem', { newItem });
+    graph.emit('beforeremoveitem', { item: newItem });
 
     let type = '';
     if (item.getType) type = item.getType();
@@ -429,7 +429,7 @@ export default class ItemController {
     }
 
     item.destroy();
-    graph.emit('afterremoveitem', { newItem });
+    graph.emit('afterremoveitem', { item: newItem });
   }
 
   /**
